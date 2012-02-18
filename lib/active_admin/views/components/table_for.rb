@@ -12,7 +12,7 @@ module ActiveAdmin
         @resource_class = options.delete(:i18n)
         @collection = collection
         @columns = []
-        build_table
+        build_table 
         super(options)
       end
 
@@ -50,7 +50,7 @@ module ActiveAdmin
 
       def build_table
         build_table_head
-        build_table_body
+        build_table_body unless @collection.blank?
       end
 
       def build_table_head
